@@ -4,6 +4,5 @@
              xmlns:local="clr-namespace:NodeEditor_AI_Main"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
     </Application.Resources>
 </Application>

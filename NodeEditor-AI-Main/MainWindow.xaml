@@ -5,21 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NodeEditor_AI_Main"
         xmlns:nodenetwork="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
-        mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="800*"/>
+            <ColumnDefinition Width="200*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.ColumnSpan="2" Background="#FF2C2F33">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Width="25" Height="25">
-                </Button>
-            </StackPanel>
+        <nodenetwork:NetworkView x:Name="networkView" Margin="0,0,9.4,0.4" />
+        <Grid HorizontalAlignment="Left" Height="35" Margin="814,10,0,0" VerticalAlignment="Top" Width="200" Grid.ColumnSpan="2">
+            <Button Content="Add" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
+            <Button Content="Build" HorizontalAlignment="Left" Margin="130,2,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
+            <Button Content="Edit" HorizontalAlignment="Left" Margin="65,2,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
         </Grid>
     </Grid>
 </Window>
