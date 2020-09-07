@@ -3,10 +3,64 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
         xmlns:local="clr-namespace:NodeEditor_PdxEventChain_Main"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        
+        xmlns:avalonEdit="clr-namespace:ICSharpCode.AvalonEdit;assembly=ICSharpCode.AvalonEdit"
+        xmlns:nodenetwork="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
+        
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="720" Width="1280">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open" />
+                <MenuItem Header="_Save" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <nodenetwork:NetworkView 
+                x:Name="NetworkView" 
+                Grid.Column="0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"/>
+            
+            <GridSplitter Grid.Column="1" Margin="2,0,2,0"
+                          Width="3" Background="Purple" 
+                          VerticalAlignment="Stretch" 
+                          HorizontalAlignment="Center"/>
+            
+            <avalonEdit:TextEditor
+                x:Name="CodeEditor"
+                Grid.Column="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                
+                FontFamily="Consolas"
+                SyntaxHighlighting=""
+                FontSize="11pt"
+                Background="#212121"
+                Foreground="#FFFFFF"
+                
+                HorizontalScrollBarVisibility="Hidden"
+                VerticalScrollBarVisibility="Hidden"
+                />
+        </Grid>
         
     </Grid>
 </Window>
