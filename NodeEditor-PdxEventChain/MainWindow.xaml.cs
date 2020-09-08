@@ -25,7 +25,7 @@ namespace NodeEditor_PdxEventChain_Main
             foldingStrategy = new XmlFoldingStrategy();
         }
 
-        #region MyRegion
+        #region Folding
 
         private FoldingManager foldingManager;
         private XmlFoldingStrategy foldingStrategy;
