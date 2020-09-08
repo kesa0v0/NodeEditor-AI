@@ -52,7 +52,11 @@
                 VerticalAlignment="Stretch"
                 
                 FontFamily="Consolas"
-                FontSize="11pt">
+                FontSize="11pt"
+                
+                Background="#212121"
+                Foreground="White"
+                >
                 
             </avalonEdit:TextEditor>
         </Grid>

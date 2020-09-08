@@ -1,64 +1,98 @@
-<SyntaxDefinition name="XAPL"
+<SyntaxDefinition name="Paradox"
                   xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
-    <Color name="Comment" foreground="Green" />
-    <Color name="String" foreground="Pink" />
-    <Color name="Xml" foreground="Orange" />
+    <Color name="Comment" foreground="#628547" />
+    <Color name="String" foreground="#9AA83A" />
+    <Color name="Constant Numeric" foreground="#D08442" />
+    <Color name="Variable Language" foreground="#407FBF" />
+    <Color name="Variable Language Description" foreground="#7A9DB8" />
+    <Color name="Support" foreground="#C7444A" />
+    <Color name="Storage" foreground="#9872A2" />
+    <Color name="Function argument" foreground="#6089B4" />
+    <Color name="Support Function" foreground="#9872A2" />
+    <Color name="Keyword" foreground="#D153DF" />
+    <Color name="Variable" foreground="#7A9DB8" />
+    <Color name="Constant" foreground="#CE6700" />
+    <Color name="Invalid" foreground="#FF0B00" />
+    <Color name="Variable Scope" foreground="#7A9DB8"/>
+    <Color name="Keyword Control" foreground="#9872A2" />
+    <Color name="Meta" />
+    <Color name="Variable Other" foreground="#D0B344" />
+    <Color name="Variable Language Description Scope" foreground="#7A9DB8" />
+    <Color name="Punct Section Block" foreground="#676867" />
+    <Color name="Entity" foreground="#51E058" />
+    <Color name="Entity Name" foreground="#14B84B" />
+    <Color name="Entity Other" foreground="#75F09E" />
+    <Color name="Keyword Operator" foreground="#A339EF" />
+    
     <!-- This is the main ruleset. -->
     <RuleSet>
-        <Span color="Comment" begin="//" />
-        <Span color="Comment" multiline="true"
-              begin="/\*" end="\*/" />
-
-
+        <!--string-->
         <Span color="String">
             <Begin>"</Begin>
             <End>"</End>
             <RuleSet>
-                <!-- nested span for escape sequences -->
                 <Span begin="\\" end="." />
             </RuleSet>
         </Span>
 
-        <Span color="Xml" multiline="false">
-            <Begin>spaz</Begin>
-            <End>spaz</End>
+        <!--NameSpace-->
+        <Rule color="Meta">
+            ^\s*[^@]?((namespace)\s[=]\s([\w.]+))
+        </Rule>
+        
+        <!--keyword-->
+        <Rule color="Keyword Control">
+            \b(if|else|limit|AND|OR|NOT|NOR)\b
+        </Rule>
+        
+        <Rule color="Variable Language Description Scope">
+            \b(option|immediate|trigger|mean_time_to_happen|hidden_effect|ai_weight|weight_modifier)\b
+        </Rule>
+
+        <Rule color="Variable Language">
+            \b(ROOT|FROM|PREV|THIS)\b
+        </Rule>
+
+        <Rule color="Variable Language Description">
+            \b(id|title|desc|picture|is_triggered_only|hide_window|name|custom_tooltip|weight|factor)\b
+        </Rule>
+        
+        <!--constant-->
+        <Rule color="Constant">
+            \b(yes|no)\b
+        </Rule>
+
+        <Rule color="Constant Numeric">
+            -?\b(([0-9]+\.?[0-9]*)|(\.[0-9]+))\b
+        </Rule>
+        
+        <!--comment-->
+        <Span color="Comment" begin="#"/>
+        
+        <!--block-->
+        <Span color="Meta">
+            <Begin>(?==)\s*{</Begin>
+            <End>}</End>
+        </Span>
+        
+        <!--code-->
+        
+        
+        <!--variable-->
+        <Span color="Variable">
+            <Begin>[^\S\n]*(?!@)(?=\b\w+\b[^\S\n]*=[^\S\n]*[{])</Begin>
+            <End>[^\S\n]*=</End>
         </Span>
 
+        <Span color="Variable Scope">
+            <Begin>[^\S\n]*(?!@)(?=\b\w+\b[^\S\n]*=[^\S\n]*[{])</Begin>
+            <End>[^\S\n]*=</End>
+        </Span>
 
-        <Keywords fontWeight="bold" foreground="Blue">
-            <Word>dealwith</Word>
-            <Word>import</Word>
-            <Word>end</Word>
-            <Word>var</Word>
-            <Word>default</Word>
-            <Word>template</Word>
-            <Word>sub</Word>
-            <Word>category</Word>
-            <Word>if</Word>
-            <Word>otherwise</Word>
-            <Word>and</Word>
-            <Word>xor</Word>
-            <Word>string</Word>
-            <Word>int</Word>
-            <Word>convert</Word>
-            <Word>to</Word>
-            <Word>escape</Word>
-            <Word>native</Word>
-            <Word>loop</Word>
-            <Word>is</Word>
-            <Word>to</Word>
-            <Word>from</Word>
-            <Word>by</Word>
-        </Keywords>
-
-        <!-- Digits -->
-        <Rule foreground="DarkGray">
-            \b0[xX][0-9a-fA-F]+  # hex number
-            |    \b
-            (    \d+(\.[0-9]+)?   #number with optional floating point
-            |    \.[0-9]+         #or just starting with floating point
-            )
-            ([eE][+-]?[0-9]+)? # optional exponent
-        </Rule>
+        <Span color="Punct Section Block">
+            <Begin>(?=(@))(?=\b\w+\b)</Begin>
+            <End>\s</End>
+        </Span>
+        
     </RuleSet>
 </SyntaxDefinition>
