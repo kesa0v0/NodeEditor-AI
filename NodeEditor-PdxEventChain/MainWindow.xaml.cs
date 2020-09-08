@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Windows.Threading;
+using System.Xml;
 using ICSharpCode.AvalonEdit.Folding;
+using ICSharpCode.AvalonEdit.Highlighting;
+using ICSharpCode.AvalonEdit.Highlighting.Xshd;
+using NodeEditor_PdxEventChain_Main.HighlightSyntax;
 using NodeNetwork.ViewModels;
 
 namespace NodeEditor_PdxEventChain_Main
@@ -23,6 +27,9 @@ namespace NodeEditor_PdxEventChain_Main
 
             foldingManager = FoldingManager.Install(CodeEditor.TextArea);
             foldingStrategy = new XmlFoldingStrategy();
+
+            CodeEditor.SyntaxHighlighting =
+                ResourceLoader.LoadHighlightingDefinition("PdxSyntax.xshd");
         }
 
         #region Folding

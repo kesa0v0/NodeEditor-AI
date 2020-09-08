@@ -52,7 +52,6 @@
                 VerticalAlignment="Stretch"
                 
                 FontFamily="Consolas"
-                SyntaxHighlighting="XML"
                 FontSize="11pt">
                 
             </avalonEdit:TextEditor>
