@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeEditor-PdxEventChain", "NodeEditor-PdxEventChain\NodeEditor-PdxEventChain.csproj", "{577E94E2-BE9C-4729-A04D-E13549D5C9F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdxModdingTools-Main", "PdxModdingTools-Main\PdxModdingTools-Main.csproj", "{1D0D594A-49B6-4C98-9A98-9B475A314B88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{577E94E2-BE9C-4729-A04D-E13549D5C9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{577E94E2-BE9C-4729-A04D-E13549D5C9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{577E94E2-BE9C-4729-A04D-E13549D5C9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{577E94E2-BE9C-4729-A04D-E13549D5C9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D0D594A-49B6-4C98-9A98-9B475A314B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D0D594A-49B6-4C98-9A98-9B475A314B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D0D594A-49B6-4C98-9A98-9B475A314B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D0D594A-49B6-4C98-9A98-9B475A314B88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED65C4B7-6B68-4740-8304-2D3B4039DA07}
+	EndGlobalSection
+EndGlobal
