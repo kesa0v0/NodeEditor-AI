@@ -48,18 +48,14 @@
             <avalonEdit:TextEditor
                 x:Name="CodeEditor"
                 Grid.Column="2"
-                HorizontalAlignment="Stretch"
+                HorizontalAlignment="Stretch"    
                 VerticalAlignment="Stretch"
                 
                 FontFamily="Consolas"
-                SyntaxHighlighting=""
-                FontSize="11pt"
-                Background="#212121"
-                Foreground="#FFFFFF"
+                SyntaxHighlighting="XML"
+                FontSize="11pt">
                 
-                HorizontalScrollBarVisibility="Hidden"
-                VerticalScrollBarVisibility="Hidden"
-                />
+            </avalonEdit:TextEditor>
         </Grid>
         
     </Grid>
