@@ -34,8 +34,40 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="CWTools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\CWTools.0.4.0-alpha4\lib\netstandard2.0\CWTools.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="DotNet.Glob, Version=3.0.5.0, Culture=neutral, PublicKeyToken=b68cc888b4f632d1">
+          <HintPath>..\packages\DotNet.Glob.3.0.5\lib\net46\DotNet.Glob.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="DynamicData, Version=6.16.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\packages\DynamicData.6.16.6\lib\net461\DynamicData.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="FParsec, Version=1.0.0.0, Culture=neutral, PublicKeyToken=40ccfc0a09edbb5d">
+          <HintPath>..\packages\FParsec.1.0.4-RC3\lib\net40-client\FParsec.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="FParsecCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=40ccfc0a09edbb5d">
+          <HintPath>..\packages\FParsec.1.0.4-RC3\lib\net40-client\FParsecCS.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="FSharp.Collections.ParallelSeq, Version=1.1.2.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\FSharp.Collections.ParallelSeq.1.1.2\lib\net45\FSharp.Collections.ParallelSeq.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="FSharp.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+          <HintPath>..\packages\FSharp.Core.5.0.0-beta.20417.1\lib\netstandard2.0\FSharp.Core.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="FSharp.Data, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\FSharp.Data.3.0.1\lib\net45\FSharp.Data.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="FSharpx.Collections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\FSharpx.Collections.2.0.0\lib\netstandard2.0\FSharpx.Collections.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="ICSharpCode.AvalonEdit, Version=6.1.0.314, Culture=neutral, PublicKeyToken=9cc39be672370310">
@@ -71,6 +103,10 @@
         </Reference>
         <Reference Include="ReactiveUI.WPF, Version=11.5.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\packages\ReactiveUI.WPF.11.5.35\lib\net472\ReactiveUI.WPF.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Sandwych.QuickGraph.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\Sandwych.QuickGraph.Core.1.0.0\lib\net45\Sandwych.QuickGraph.Core.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="Splat, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null">
@@ -129,6 +165,7 @@
         <Reference Include="System.Xaml">
             <RequiredTargetFramework>4.0</RequiredTargetFramework>
         </Reference>
+        <Reference Include="System.Xml.Linq" />
         <Reference Include="WindowsBase" />
         <Reference Include="PresentationCore" />
         <Reference Include="PresentationFramework" />
@@ -146,6 +183,7 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="HighlightSyntax\ResourceLoader.cs" />
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
@@ -160,6 +198,7 @@
             <DesignTime>True</DesignTime>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="HighlightSyntax\PdxSyntax.xshd" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>
