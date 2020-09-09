@@ -23,7 +23,7 @@
     <Color name="Entity Name" foreground="#14B84B" />
     <Color name="Entity Other" foreground="#75F09E" />
     <Color name="Keyword Operator" foreground="#A339EF" />
-    
+
     <!-- This is the main ruleset. -->
     <RuleSet>
         <!--string-->
@@ -39,12 +39,12 @@
         <Rule color="Meta">
             ^\s*[^@]?((namespace)\s[=]\s([\w.]+))
         </Rule>
-        
+
         <!--keyword-->
         <Rule color="Keyword Control">
             \b(if|else|limit|AND|OR|NOT|NOR)\b
         </Rule>
-        
+
         <Rule color="Variable Language Description Scope">
             \b(option|immediate|trigger|mean_time_to_happen|hidden_effect|ai_weight|weight_modifier)\b
         </Rule>
@@ -56,7 +56,7 @@
         <Rule color="Variable Language Description">
             \b(id|title|desc|picture|is_triggered_only|hide_window|name|custom_tooltip|weight|factor)\b
         </Rule>
-        
+
         <!--constant-->
         <Rule color="Constant">
             \b(yes|no)\b
@@ -65,22 +65,22 @@
         <Rule color="Constant Numeric">
             -?\b(([0-9]+\.?[0-9]*)|(\.[0-9]+))\b
         </Rule>
-        
+
         <!--comment-->
         <Span color="Comment" begin="#"/>
-        
+
         <!--block-->
         <Span color="Meta">
             <Begin>(?==)\s*{</Begin>
             <End>}</End>
         </Span>
-        
+
         <!--code-->
-        
-        
+
+
         <!--variable-->
         <Span color="Variable">
-            <Begin>[^\S\n]*(?!@)(?=\b\w+\b[^\S\n]*=[^\S\n]*[{])</Begin>
+            <Begin>[^\S\n]*(?!@)(?=\b\w+\b[^\S\n]*=[^\S\n]*[^{\s])</Begin>
             <End>[^\S\n]*=</End>
         </Span>
 
@@ -89,10 +89,10 @@
             <End>[^\S\n]*=</End>
         </Span>
 
-        <Span color="Punct Section Block">
+        <Span color="Variable Other">
             <Begin>(?=(@))(?=\b\w+\b)</Begin>
             <End>\s</End>
         </Span>
-        
+
     </RuleSet>
 </SyntaxDefinition>

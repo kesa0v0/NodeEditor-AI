@@ -198,6 +198,7 @@
             <DesignTime>True</DesignTime>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="HighlightSyntax\PdxSyntax - Copy.xshd" />
         <EmbeddedResource Include="HighlightSyntax\PdxSyntax.xshd" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
