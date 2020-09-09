@@ -26,15 +26,16 @@
 
     <!-- This is the main ruleset. -->
     <RuleSet>
-        <!--string-->
-        <Span color="String">
-            <Begin>"</Begin>
-            <End>"</End>
-            <RuleSet>
-                <Span begin="\\" end="." />
-            </RuleSet>
-        </Span>
+<!--        &lt;!&ndash;string&ndash;&gt;-->
+<!--        <Span color="String">-->
+<!--            <Begin>"</Begin>-->
+<!--            <End>"</End>-->
+<!--            <RuleSet>-->
+<!--                <Span begin="\\" end="." />-->
+<!--            </RuleSet>-->
+<!--        </Span>-->
 
+<<<<<<< Updated upstream
         <!--NameSpace-->
         <Rule color="Meta">
             ^\s*[^@]?((namespace)\s[=]\s([\w.]+))
@@ -48,11 +49,27 @@
         <Rule color="Variable Language Description Scope">
             \b(option|immediate|trigger|mean_time_to_happen|hidden_effect|ai_weight|weight_modifier)\b
         </Rule>
+=======
+<!--        &lt;!&ndash;NameSpace&ndash;&gt;-->
+<!--        <Rule color="Meta">-->
+<!--            ^\s*[^@]?((namespace)\s[=]\s([\w.]+))-->
+<!--        </Rule>-->
+<!--        -->
+<!--        &lt;!&ndash;keyword&ndash;&gt;-->
+<!--        <Rule color="Keyword Control">-->
+<!--            \b(if|else|limit|AND|OR|NOT|NOR)\b-->
+<!--        </Rule>-->
+<!--        -->
+<!--        <Rule color="Variable Language Description Scope">-->
+<!--            \b(option|immediate|trigger|mean_time_to_happen|hidden_effect|ai_weight|weight_modifier)\b-->
+<!--        </Rule>-->
+>>>>>>> Stashed changes
 
-        <Rule color="Variable Language">
-            \b(ROOT|FROM|PREV|THIS)\b
-        </Rule>
+<!--        <Rule color="Variable Language">-->
+<!--            \b(ROOT|FROM|PREV|THIS)\b-->
+<!--        </Rule>-->
 
+<<<<<<< Updated upstream
         <Rule color="Variable Language Description">
             \b(id|title|desc|picture|is_triggered_only|hide_window|name|custom_tooltip|weight|factor)\b
         </Rule>
@@ -75,23 +92,60 @@
             <End>}</End>
         </Span>
 
+=======
+<!--        <Rule color="Variable Language Description">-->
+<!--            \b(id|title|desc|picture|is_triggered_only|hide_window|name|custom_tooltip|weight|factor)\b-->
+<!--        </Rule>-->
+<!--        -->
+<!--        &lt;!&ndash;constant&ndash;&gt;-->
+<!--        <Rule color="Constant">-->
+<!--            \b(yes|no)\b-->
+<!--        </Rule>-->
+
+<!--        <Rule color="Constant Numeric">-->
+<!--            -?\b(([0-9]+\.?[0-9]*)|(\.[0-9]+))\b-->
+<!--        </Rule>-->
+<!--        -->
+<!--        &lt;!&ndash;comment&ndash;&gt;-->
+<!--        <Span color="Comment" begin="#"/>-->
+<!--        -->
+<!--        &lt;!&ndash;block&ndash;&gt;-->
+<!--        <Span color="Meta">-->
+<!--            <Begin>(?==)\s*{</Begin>-->
+<!--            <End>}</End>-->
+<!--        </Span>-->
+        
+>>>>>>> Stashed changes
         <!--code-->
 
 
         <!--variable-->
+<<<<<<< Updated upstream
         <Span color="Variable">
             <Begin>[^\S\n]*(?!@)(?=\b\w+\b[^\S\n]*=[^\S\n]*[^{\s])</Begin>
             <End>[^\S\n]*=</End>
         </Span>
+=======
+<!--        <Span color="Variable">-->
+<!--            <Begin>[^\S\n]*(?!@)(?=\b\w+\b[^\S\n]*=[^\S\n]*[{])</Begin>-->
+<!--            <End>[^\S\n]*=</End>-->
+<!--        </Span>-->
+>>>>>>> Stashed changes
 
-        <Span color="Variable Scope">
-            <Begin>[^\S\n]*(?!@)(?=\b\w+\b[^\S\n]*=[^\S\n]*[{])</Begin>
-            <End>[^\S\n]*=</End>
-        </Span>
+<!--        <Span color="Variable Scope">-->
+<!--            <Begin>[^\S\n]*(?!@)(?=\b\w+\b[^\S\n]*=[^\S\n]*[{])</Begin>-->
+<!--            <End>[^\S\n]*=</End>-->
+<!--        </Span>-->
 
+<<<<<<< Updated upstream
         <Span color="Variable Other">
             <Begin>(?=(@))(?=\b\w+\b)</Begin>
             <End>\s</End>
+=======
+        <Span color="Variable">
+            <Begin>@</Begin>
+<!--            <End>\s</End>-->
+>>>>>>> Stashed changes
         </Span>
 
     </RuleSet>
