@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Windows.Threading;
-using System.Xml;
+using DynamicData;
 using ICSharpCode.AvalonEdit.Folding;
-using ICSharpCode.AvalonEdit.Highlighting;
-using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 using NodeEditor_PdxEventChain_Main.HighlightSyntax;
 using NodeNetwork.ViewModels;
 
@@ -11,15 +9,20 @@ namespace NodeEditor_PdxEventChain_Main
 {
     public partial class MainWindow
     {
+        private NetworkViewModel network;
+        
         public MainWindow()
         {
             InitializeComponent();
-
-            Console.Write(@"test!");
-
-            var network = new NetworkViewModel();
+            
+            // NodeEditor
+            
+            network = new NetworkViewModel();
             NetworkView.ViewModel = network;
 
+            
+            
+            // CodeEditor
             DispatcherTimer foldingUpdateTimer = new DispatcherTimer();
             foldingUpdateTimer.Interval = TimeSpan.FromSeconds(foldingDuration);
             foldingUpdateTimer.Tick += delegate { UpdateFoldings(); };
@@ -30,6 +33,16 @@ namespace NodeEditor_PdxEventChain_Main
 
             CodeEditor.SyntaxHighlighting =
                 ResourceLoader.LoadHighlightingDefinition("PdxSyntax.xshd");
+            
+            
+        }
+
+        public void AddSomething()
+        {
+            var node1 = new NodeViewModel();
+            node1.Name = "Test";
+            
+            network.Nodes.Add(node1);
         }
 
         #region Folding
