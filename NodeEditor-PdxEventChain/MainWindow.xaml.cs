@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Input;
 using System.Windows.Threading;
 using DynamicData;
 using ICSharpCode.AvalonEdit.Folding;
@@ -56,5 +57,10 @@ namespace NodeEditor_PdxEventChain_Main
             foldingStrategy.UpdateFoldings(foldingManager, CodeEditor.Document);
         }
         #endregion
+
+        private void NetworkViewMouseWheelDown(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

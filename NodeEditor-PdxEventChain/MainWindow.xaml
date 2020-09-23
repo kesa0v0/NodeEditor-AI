@@ -38,7 +38,9 @@
                 x:Name="NetworkView" 
                 Grid.Column="0"
                 HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"/>
+                VerticalAlignment="Stretch"
+                
+                MouseDown="NetworkViewMouseWheelDown"/>
             
             <GridSplitter Grid.Column="1" Margin="2,0,2,0"
                           Width="3" Background="Purple" 
