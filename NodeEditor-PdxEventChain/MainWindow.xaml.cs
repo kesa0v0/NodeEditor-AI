@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reactive;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 using DynamicData;
@@ -60,7 +62,13 @@ namespace NodeEditor_PdxEventChain_Main
 
         private void NetworkViewMouseWheelDown(object sender, MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
+            {
+                var x = e.GetPosition(sender as Window);
+                MessageBox.Show(x.ToString());
+                
+                
+            }
         }
     }
 }
