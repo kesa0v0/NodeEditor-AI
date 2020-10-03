@@ -64,10 +64,20 @@ namespace NodeEditor_PdxEventChain_Main
         {
             if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
             {
-                var x = e.GetPosition(sender as Window);
+                var position = e.GetPosition(sender as Window);
                 MessageBox.Show(x.ToString());
                 
-                
+                // Todo: 검색 기능 있는 새 노드 만드는 창
+                // ex>
+                var addNode = new NodeViewModel {Name = "TestNode"};
+                network.Nodes.Add(addNode);
+
+                var addNodeInput = new NodeInputViewModel {Name = "Node 1 input"};
+                addNode.Inputs.Add(addNodeInput);
+
+                var addNodeOutput = new NodeOutputViewModel {Name = "Node 2 output"};
+                addNode.Outputs.Add(addNodeOutput);
+
             }
         }
     }
